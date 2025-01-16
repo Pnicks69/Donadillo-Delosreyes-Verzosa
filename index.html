@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a onclick="showSection('home')">Home</a>
+    <a onclick="showSection('deleted')">Deleted Folders</a>
+  </nav>
+  <main id="content">
+    <div id="home" class="section active">
+      <h1>Home</h1>
+      <div id="folder-list"></div>
+      <button onclick="createFolder()">Create Folder</button>
+    </div>
+    <div id="deleted" class="section">
+      <h1>Deleted Folders</h1>
+      <div id="deleted-list"></div>
+    </div>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Create Folder</h2>
+      <input type="text" id="folder-name" placeholder="Folder Name">
+      <button onclick="saveFolder()">Save</button>
+      <button onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
